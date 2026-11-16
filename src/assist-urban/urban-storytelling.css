@@ -1,0 +1,413 @@
+.au { max-width: 1240px; margin: 0 auto; padding: 24px 20px 80px; }
+.au-brandrow { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+.au-brand { font: 500 15px "Manrope", ui-sans-serif, system-ui, sans-serif; letter-spacing: .14em; color: #1d6f6a; }
+.au-brand-sub { font: 400 12px "Manrope", ui-sans-serif, system-ui, sans-serif; color: var(--muted, #6a665c); }
+.au-badge { font: 500 11px "Manrope", ui-sans-serif, system-ui, sans-serif; letter-spacing: .06em; text-transform: uppercase; color: #fff; background: #1d6f6a; border-radius: 999px; padding: 4px 11px; }
+.au-flags { display: flex; gap: 14px; flex-wrap: wrap; font: 400 12.5px "Manrope", ui-sans-serif, system-ui, sans-serif; color: var(--muted, #6a665c); margin-top: 8px; }
+.au-langswitch { display: inline-flex; border: 1px solid var(--line, #d8d3c5); border-radius: 999px; overflow: hidden; margin-left: auto; }
+.au-langswitch button { background: transparent; color: var(--muted, #6a665c); border: 0; padding: 4px 12px; font: 500 12px "Manrope", ui-sans-serif, system-ui, sans-serif; cursor: pointer; }
+.au-langswitch button.on { background: #1d6f6a; color: #fff; }
+body { margin: 0; background: #f3f0e8; color: #1c1b18; font-family: "Newsreader", Georgia, "Times New Roman", serif; font-size: 17px; line-height: 1.55; }
+.au-head h1 { font-weight: 500; }
+.au-head h1 { font-size: clamp(24px, 3.4vw, 38px); margin: 4px 0 8px; letter-spacing: -0.01em; }
+.au-eyebrow { font: 500 12px "Manrope", ui-sans-serif, system-ui, sans-serif; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0; }
+.au-lede { color: var(--ink); max-width: 860px; margin: 0 0 18px; }
+.au-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+@media (max-width: 980px) { .au-grid { grid-template-columns: minmax(0, 1fr); } }
+.au-col { display: flex; flex-direction: column; gap: 16px; }
+.au-card { border: 1px solid var(--line); border-radius: 10px; background: var(--surface); padding: 14px 16px; }
+.au-card h2 { font: 500 12px "Manrope", ui-sans-serif, system-ui, sans-serif; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
+.au-card h3 { font: 500 11px "Manrope", ui-sans-serif, system-ui, sans-serif; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 8px 0 4px; }
+.au-hint { color: var(--muted); font-size: 14px; margin: 6px 0; }
+.au-map { height: 340px; border-radius: 8px; overflow: hidden; border: 1px solid var(--line); z-index: 0; }
+.au-consent { display: flex; flex-direction: column; gap: 8px; }
+.au-consent label { display: flex; gap: 10px; align-items: baseline; border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; cursor: pointer; font-size: 15px; }
+.au-consent label.on { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 8%, transparent); }
+.au-presets { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.au-chip { background: transparent; border: 1px solid var(--line); color: var(--ink); border-radius: 999px; padding: 5px 11px; font: 400 12px "Manrope", ui-sans-serif, system-ui, sans-serif; cursor: pointer; }
+.au-chip:hover { border-color: var(--accent); }
+.au-chip-voice { border-style: dashed; }
+.au-text { width: 100%; box-sizing: border-box; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--ink); font: 400 15px/1.5 "Newsreader", Georgia, serif; padding: 10px 12px; resize: vertical; }
+.au-row { display: flex; gap: 12px; align-items: center; margin-top: 10px; flex-wrap: wrap; }
+.au-row label { display: flex; flex-direction: column; gap: 4px; font: 400 12px "Manrope", ui-sans-serif, system-ui, sans-serif; color: var(--muted); }
+.au-row select { background: var(--bg); color: var(--ink); border: 1px solid var(--line); border-radius: 6px; padding: 5px 8px; }
+.au-edge-label { flex: 1; min-width: 220px; }
+.au-edge { background: var(--bg); color: var(--ink); border: 1px solid var(--line); border-radius: 6px; padding: 6px 8px; font: 400 12px "Manrope", ui-sans-serif, system-ui, sans-serif; width: 100%; }
+.au-submit { margin-left: auto; background: var(--ink); color: var(--bg); border: 0; border-radius: 8px; padding: 10px 18px; font: 500 14px "Manrope", ui-sans-serif, system-ui, sans-serif; cursor: pointer; }
+.au-submit:disabled { opacity: 0.6; cursor: wait; }
+.au-error { color: #e63946; font: 400 13px "Manrope", ui-sans-serif, system-ui, sans-serif; }
+.au-meta { color: var(--muted); font: 400 12.5px "Manrope", ui-sans-serif, system-ui, sans-serif; }
+.au-scrubbed { font: 400 14px/1.55 "Newsreader", Georgia, serif; }
+@media (max-width: 640px) { .au-briefs { grid-template-columns: 1fr; } }
+.au-dram { font: 400 15px/1.5 "Newsreader", Georgia, serif; }
+.au-json { max-height: 320px; overflow: auto; font: 400 11px/1.5 "Manrope", ui-sans-serif, system-ui, sans-serif; background: var(--logbg); color: var(--logink); padding: 10px; border-radius: 8px; }
+.au-foot { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 20px; color: var(--muted); font: 400 12px "Manrope", ui-sans-serif, system-ui, sans-serif; }
+.leaflet-container { font: 400 11px "Manrope", ui-sans-serif, system-ui, sans-serif; }
+
+.au-modes { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+.au-modes button { background: transparent; color: var(--muted, #6a665c); border: 1px solid var(--line, #d8d3c5); border-radius: 999px; padding: 9px 18px; font: 500 13px "Manrope", ui-sans-serif, system-ui, sans-serif; cursor: pointer; }
+.au-mapsem { font: 400 11px "Manrope", ui-sans-serif, system-ui, sans-serif; color: var(--muted, #6a665c); text-transform: none; letter-spacing: 0; }
+.au-media-label { font: 400 12px "Manrope", ui-sans-serif, system-ui, sans-serif; color: var(--muted, #6a665c); }
+.au-chip.on { background: #1d6f6a; border-color: #1d6f6a; color: #fff; }
+.au-tight { margin-top: 8px; }
+.au-wall { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.au-wall li { border: 1px solid var(--line, #d8d3c5); border-radius: 8px; padding: 8px 12px; }
+.au-wall-dim { font: 500 10.5px "Manrope", ui-sans-serif, system-ui, sans-serif; color: #fff; border-radius: 999px; padding: 2px 9px; margin-right: 6px; }
+.au-wall-mood, .au-wall-form { font: 400 11px "Manrope", ui-sans-serif, system-ui, sans-serif; color: var(--muted, #6a665c); margin-right: 8px; }
+.au-wall-text { margin: 6px 0 4px; font: 400 15px/1.5 "Newsreader", Georgia, serif; }
+.au-wall-id { font: 400 10.5px "Manrope", ui-sans-serif, system-ui, sans-serif; color: var(--muted, #6a665c); }
+
+
+.au-files { border: 1px dashed var(--line, #d8d3c5); border-radius: 8px; padding: 8px 12px; margin-top: 8px; }
+.au-files ul { list-style: none; margin: 6px 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.au-files li { display: flex; gap: 10px; align-items: center; justify-content: space-between; }
+.au-wall-media { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
+.au-wall-media img, .au-wall-media video { max-width: 100%; max-height: 180px; border-radius: 8px; border: 1px solid var(--line, #d8d3c5); }
+.au-wall-media audio { width: 260px; max-width: 100%; }
+
+.au-soon { font: 400 10.5px "Manrope", ui-sans-serif, system-ui, sans-serif; color: var(--muted, #6a665c); text-transform: uppercase; letter-spacing: .08em; margin-left: 8px; }
+
+.au-wall li { cursor: pointer; }
+.au-wall li.sel { border-color: #1d6f6a; box-shadow: 0 0 0 1px #1d6f6a inset; }
+.au-chip.coming { opacity: .6; }
+.au-modes { align-items: center; margin-top: 10px; }
+
+.au-brand-name { font: 400 12px "Manrope", ui-sans-serif, system-ui, sans-serif; color: var(--muted, #6a665c); }
+.au-suite-link { font: 500 11px "Manrope", ui-sans-serif, system-ui, sans-serif; letter-spacing: .1em; color: #1d6f6a; text-decoration: none; border: 1px solid var(--line, #d8d3c5); border-radius: 999px; padding: 3px 10px; }
+.au-suite-link:hover { border-color: #1d6f6a; }
+.au-chip-pilot { border-style: dashed; }
+.au-chip-pilot.on { background: #6a4a1d; border-color: #6a4a1d; color: #fff; }
+.au-chip-add { border-style: dashed; border-color: #1d6f6a; color: #1d6f6a; }
+.au-chip-add:hover { background: #1d6f6a; color: #fff; }
+.au-chip.pilot { box-shadow: inset 0 0 0 1px #b08a4a; }
+.au-pilot-hint { border-left: 2px solid #b08a4a; padding-left: 10px; }
+.au-zone-editor { margin: 0 0 16px; }
+.au-zone-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; margin-top: 12px; }
+.au-zone-form label { display: flex; flex-direction: column; gap: 4px; font: 400 12px "Manrope", ui-sans-serif, system-ui, sans-serif; color: var(--muted, #6a665c); }
+.au-zone-form input { background: var(--bg); color: var(--ink); border: 1px solid var(--line, #d8d3c5); border-radius: 6px; padding: 6px 8px; font: 400 13px "Manrope", ui-sans-serif, system-ui, sans-serif; }
+.au-zone-list { display: flex; flex-direction: column; gap: 6px; margin-top: 14px; border-top: 1px dashed var(--line, #d8d3c5); padding-top: 10px; }
+.au-zone-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; font: 400 12.5px "Manrope", ui-sans-serif, system-ui, sans-serif; }
+
+/* The suite root locks the viewport for full-screen instrument forks; this
+   storytelling app is a document-flow page and must scroll on the light paper. */
+html.urban-route, html.urban-route body, html.urban-route #root {
+  height: auto;
+  min-height: 100%;
+  overflow: auto;
+  background: #f3f0e8;
+  color: #1c1b18;
+}
+
+/* Explicit light palette for the storytelling route: the suite root sets a
+   dark --bg, which made the story textarea black-on-black. */
+html.urban-route {
+  --bg: #ffffff;
+  --surface: #fbfaf6;
+  --ink: #1c1b18;
+  --muted: #6a665c;
+  --line: #d8d3c5;
+  --accent: #1d6f6a;
+}
+.au-text,
+.au-zone-form input,
+.au-row select {
+  background: #ffffff;
+  color: #1c1b18;
+}
+.au-text::placeholder { color: #8a857a; }
+.au-text:focus,
+.au-zone-form input:focus,
+.au-row select:focus {
+  outline: 2px solid #1d6f6a;
+  outline-offset: 1px;
+}
+
+.au-delete { border-color: #b04545; color: #b04545; margin-top: 6px; }
+.au-delete:hover { background: #b04545; color: #fff; border-color: #b04545; }
+.au-delete:disabled { opacity: .55; cursor: wait; }
+
+/* Comparative timelines: one post, media grouped by moment. */
+.au-wall-media.comparative {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 8px;
+  align-items: start;
+}
+.au-media-card { margin: 0; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.au-media-card figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font: 10px "Manrope", ui-sans-serif, system-ui, sans-serif;
+  color: #1c1b18;
+}
+.au-media-card figcaption b {
+  align-self: flex-start;
+  padding: 1px 6px;
+  border: 1px solid #1d6f6a;
+  border-radius: 999px;
+  color: #1d6f6a;
+  font-size: 9px;
+  letter-spacing: .04em;
+}
+.au-media-card figcaption small { color: #6a665c; line-height: 1.35; }
+.au-media-card img, .au-media-card video { width: 100%; }
+.au-compare-badge {
+  display: inline-block;
+  margin: 2px 0 4px;
+  padding: 1px 7px;
+  border: 1px solid #b08a4a;
+  border-radius: 999px;
+  color: #8a5a1d;
+  font: 9px "Manrope", ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: .05em;
+}
+.au-comparative-hint { border-left: 2px solid #b08a4a; padding-left: 10px; }
+.au-file-row { display: flex; flex-direction: column; gap: 4px; }
+.au-media-input {
+  width: 100%;
+  background: #fff;
+  color: #1c1b18;
+  border: 1px solid #d8d3c5;
+  border-radius: 6px;
+  padding: 5px 8px;
+  font: 400 12px "Manrope", ui-sans-serif, system-ui, sans-serif;
+}
+.au-media-input::placeholder { color: #8a857a; }
+
+.au-zone-actions { display: flex; gap: 4px; flex-wrap: wrap; justify-content: flex-end; }
+
+.au-zone-own { align-self: center; color: #8a5a1d; font: 8px "Manrope", ui-sans-serif, system-ui, sans-serif; font-style: normal; letter-spacing: .05em; }
+
+.au-zone-manage {
+  margin: 0 0 16px;
+  padding: 12px;
+  border: 1px dashed #b08a4a;
+  border-radius: 8px;
+  background: #fbfaf6;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.au-zone-manage-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px; }
+.au-zone-manage-head small { color: #6a665c; font: 9px "Manrope", ui-sans-serif, system-ui, sans-serif; }
+.au-zone-manage-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; border-top: 1px solid #e3ddd0; padding-top: 8px; }
+.au-zone-manage-name {
+  background: none;
+  border: 0;
+  padding: 0;
+  text-align: left;
+  color: #1c1b18;
+  font: 600 13px "Manrope", ui-sans-serif, system-ui, sans-serif;
+  cursor: pointer;
+}
+.au-zone-manage-name:hover { color: #1d6f6a; }
+.au-delete-zone { border-color: #b04545 !important; color: #b04545 !important; }
+.au-delete-zone:hover { background: #b04545 !important; color: #fff !important; }
+.au-zone-notice { color: #1d6f6a; border-left: 2px solid #1d6f6a; padding-left: 10px; }
+
+.au-zone-city { display: flex; flex-direction: column; gap: 6px; }
+.au-zone-city + .au-zone-city { border-top: 1px dashed #e3ddd0; padding-top: 8px; }
+.au-zone-city-name { color: #8a5a1d; font: 600 10px "Manrope", ui-sans-serif, system-ui, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+
+.au-city-options { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 8px; align-items: center; }
+
+/* Field use: one-tap GPS + follow-me while moving. */
+.au-geo-actions { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 2px; }
+.au-geo-actions .au-chip { min-height: 34px; }
+.au button { touch-action: manipulation; }
+
+/* Mobile layout for journalists on the move. */
+@media (max-width: 720px) {
+  .au { padding: 12px 12px calc(56px + env(safe-area-inset-bottom)); }
+  .au-head h1 { font-size: 25px; line-height: 1.08; }
+  .au-brandrow { gap: 8px; }
+  .au-langswitch { margin-left: 0; }
+  .au-lede { font-size: 15px; }
+  .au-modes { gap: 6px; margin-top: 8px; }
+  .au-modes button { padding: 8px 12px; min-height: 34px; font-size: 11px; }
+  .au-grid { gap: 12px; }
+  .au-card { padding: 12px; }
+  .au-map { height: 300px; }
+  .au-text, .au-zone-form input, .au-row select, .au-media-input, .au-files input { font-size: 16px; }
+  .au-submit { width: 100%; margin-left: 0; min-height: 44px; }
+  .au-geo-actions .au-chip { min-height: 40px; }
+  .au-zone-manage-row { flex-direction: column; align-items: stretch; }
+  .au-zone-actions { justify-content: flex-start; }
+  .au-zone-actions .au-chip { min-height: 36px; }
+  .au-wall-media img, .au-wall-media video { max-height: 260px; width: 100%; }
+  .au-wall-media audio { width: 100%; }
+  .au-wall-media.comparative { grid-template-columns: 1fr; }
+  .au-file-row { gap: 6px; }
+  .au-delete { min-height: 36px; }
+  .au-foot { flex-direction: column; }
+}
+
+/* Mobile section navigation: jump to map, composer or wall while on the move. */
+.au-sectionnav { display: none; }
+@media (max-width: 720px) {
+  .au-sectionnav {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    position: sticky;
+    top: 0;
+    z-index: 600;
+    background: #f3f0e8;
+    border-bottom: 1px solid var(--line);
+    padding: 8px 0;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .au-sectionnav::-webkit-scrollbar { display: none; }
+  .au-sectionnav a {
+    flex: 0 0 auto;
+    min-height: 36px;
+    padding: 8px 12px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: #1c1b18;
+    text-decoration: none;
+    font: 500 11px "Manrope", ui-sans-serif, system-ui, sans-serif;
+  }
+  .au-sectionnav a:active { background: #1d6f6a; color: #fff; }
+  .au-card[id] { scroll-margin-top: 58px; }
+  .au-modes {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .au-modes::-webkit-scrollbar { display: none; }
+  .au-modes > * { flex: 0 0 auto; }
+}
+
+/* ------------------------------------------------------------------ state */
+.au-state { display: flex; flex-direction: column; gap: 10px; }
+.au-state-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.au-state-head h3 { margin: 0; }
+.au-state-themes, .au-state-active, .au-state-suggestions { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.au-search { display: flex; gap: 8px; align-items: flex-end; flex-wrap: wrap; }
+.au-search label { flex: 1 1 220px; display: flex; flex-direction: column; gap: 3px; }
+.au-search input {
+  width: 100%;
+  background: #fff;
+  color: #1c1b18;
+  border: 1px solid var(--line, #d8d3c5);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font: 400 14px "Manrope", ui-sans-serif, system-ui, sans-serif;
+}
+.au-state-events { display: flex; gap: 10px; flex-wrap: wrap; }
+.au-state-events label { display: flex; flex-direction: column; gap: 3px; min-width: 180px; }
+.au-state-events select, .au-state-year select {
+  background: #fff;
+  color: #1c1b18;
+  border: 1px solid var(--line, #d8d3c5);
+  border-radius: 6px;
+  padding: 6px 8px;
+  font: 400 12px "Manrope", ui-sans-serif, system-ui, sans-serif;
+}
+.au-event-detail {
+  border-left: 2px solid #1d6f6a;
+  padding: 6px 0 6px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.au-event-detail p { margin: 0; }
+.au-event-detail a { color: #1d6f6a; word-break: break-all; }
+.au-event-warning { color: #8a5a1d; font-weight: 500; }
+.au-state-result { display: flex; flex-direction: column; gap: 8px; border-top: 1px dashed var(--line, #d8d3c5); padding-top: 10px; }
+.au-state-explanation { margin: 0; font: 400 14.5px/1.5 "Newsreader", Georgia, serif; }
+.au-state-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.au-state-story {
+  width: 100%;
+  text-align: left;
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  gap: 2px 8px;
+  background: transparent;
+  border: 1px solid var(--line, #d8d3c5);
+  border-radius: 8px;
+  padding: 7px 9px;
+  cursor: pointer;
+  color: #1c1b18;
+}
+.au-state-story:hover { border-color: #1d6f6a; }
+.au-state-weight { grid-row: 1 / span 2; align-self: center; height: 6px; background: #e3ddd0; border-radius: 999px; overflow: hidden; }
+.au-state-weight > span { display: block; height: 100%; background: #1d6f6a; }
+.au-state-excerpt { font: 400 13.5px/1.4 "Newsreader", Georgia, serif; }
+.au-state-story small { color: #6a665c; font: 10.5px "Manrope", ui-sans-serif, system-ui, sans-serif; }
+.au-state-empty { border: 1px dashed #b08a4a; border-radius: 8px; padding: 10px 12px; background: #fbfaf6; }
+.au-state-empty p { margin: 4px 0 8px; }
+.au-state-sparse { color: #8a5a1d; }
+.au-state-note { font-size: 12px; }
+.au-sr {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+/* ------------------------------------------------------- additive fabric */
+.au-fabric-canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 450;
+}
+.au-fabric-controls, .au-fabric-relations, .au-fabric-elements {
+  display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 8px 0;
+}
+.au-fabric-controls label { display: flex; flex-direction: column; gap: 3px; font: 400 11px "Manrope", ui-sans-serif, system-ui, sans-serif; color: #6a665c; }
+.au-fabric-controls select { background: #fff; color: #1c1b18; border: 1px solid var(--line, #d8d3c5); border-radius: 6px; padding: 5px 7px; }
+.au-fabric-controls input[type="range"] { width: 140px; accent-color: #1d6f6a; }
+.au-fabric-relations label { display: inline-flex; gap: 5px; align-items: center; font: 400 11px "Manrope", ui-sans-serif, system-ui, sans-serif; }
+.au-fabric-relations label.off { opacity: .55; }
+.au-fabric-inspect { border-top: 1px dashed var(--line, #d8d3c5); padding-top: 8px; }
+.au-fabric-pick { border-left: 2px solid #1d6f6a; padding: 6px 10px; margin: 6px 0; }
+.au-fabric-pick p { margin: 4px 0; font: 400 12.5px "Manrope", ui-sans-serif, system-ui, sans-serif; }
+.au-fabric-elements .au-chip { font-size: 10.5px; }
+
+/* ------------------------------------------------------------- project */
+.au-project { margin: 0 0 16px; border-color: #1d6f6a; }
+.au-project-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.au-project-head h2 { margin: 0 auto 0 0; }
+.au-project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin: 10px 0; }
+.au-project-grid label, .au-project-newid { display: flex; flex-direction: column; gap: 4px; font: 400 11.5px "Manrope", ui-sans-serif, system-ui, sans-serif; color: #6a665c; }
+.au-project-grid select, .au-project-newid input, .au-project-url input {
+  background: #fff; color: #1c1b18; border: 1px solid var(--line, #d8d3c5);
+  border-radius: 6px; padding: 6px 8px; font: 400 12.5px "Manrope", ui-sans-serif, system-ui, sans-serif;
+}
+.au-project-grid input[type="range"] { accent-color: #1d6f6a; }
+.au-project-actions { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin-top: 10px; }
+.au-project-url { display: flex; flex-direction: column; gap: 4px; margin-top: 10px; font: 400 11.5px "Manrope", ui-sans-serif, system-ui, sans-serif; color: #6a665c; }
+.au-project-issues { margin: 8px 0 0; padding-left: 20px; color: #b04545; font: 400 12px "Manrope", ui-sans-serif, system-ui, sans-serif; }
+
+/* ------------------------------------------------------ robustness/info */
+.au-offline {
+  margin: 0 0 12px; padding: 9px 12px; border: 1px solid #b08a4a; border-radius: 8px;
+  background: #fbf3e3; color: #6a4a1d; font: 400 12.5px "Manrope", ui-sans-serif, system-ui, sans-serif;
+}
+.au-report { margin-top: 16px; }
+.au-report-note { display: flex; flex-direction: column; gap: 4px; font: 400 12px "Manrope", ui-sans-serif, system-ui, sans-serif; color: #6a665c; }
+.au-report-note textarea { background: #fff; color: #1c1b18; border: 1px solid var(--line, #d8d3c5); border-radius: 8px; padding: 8px; font: 400 13px "Manrope", ui-sans-serif, system-ui, sans-serif; }
+.au-version { color: #6a665c; font: 400 10.5px "Manrope", ui-sans-serif, system-ui, sans-serif; }
+.au-foot-tools { display: inline-flex; gap: 8px; align-items: center; }
+.au-foot-tools .au-chip { font-size: 10.5px; padding: 3px 9px; }
+
+
+/* Symbolic story icons: the symbol encodes the shared media (image, video,
+   audio, text, mixed). No labels on the map; the shape speaks. */
+.au-story-icon { background: none; border: 0; }
+.au-story-icon-badge {
+  display: flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; border-radius: 50%;
+  background: var(--pin, #1d6f6a);
+  border: 2px solid #fbfaf6;
+  box-shadow: 0 4px 14px rgba(28, 27, 24, .22);
+}
+.au-story-icon-badge svg {
+  width: 19px; height: 19px; fill: none; stroke: #fbfaf6;
+  stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round;
+}

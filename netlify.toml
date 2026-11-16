@@ -1,0 +1,67 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# Voice transcription (optional): the browser uploads raw audio to the function,
+# which forwards it to Groq Whisper. Set GROQ_API_KEY in the site environment.
+[[redirects]]
+  from = "/api/groq/transcribe"
+  to = "/.netlify/functions/transcribe"
+  status = 200
+
+# Stories + Dramaturgical Zones + cities: Netlify Blobs.
+[[redirects]]
+  from = "/api/story"
+  to = "/.netlify/functions/story"
+  status = 200
+
+[[redirects]]
+  from = "/api/zones"
+  to = "/.netlify/functions/zones"
+  status = 200
+
+[[redirects]]
+  from = "/api/cities"
+  to = "/.netlify/functions/cities"
+  status = 200
+
+[[redirects]]
+  from = "/api/media-upload"
+  to = "/.netlify/functions/media-upload"
+  status = 200
+
+[[redirects]]
+  from = "/api/media"
+  to = "/.netlify/functions/media"
+  status = 200
+
+# Emergent state: computed server-side from packs + calendar + stories.
+[[redirects]]
+  from = "/api/state"
+  to = "/.netlify/functions/state"
+  status = 200
+
+# Project packs: seed + PM-saved (data, no deploy).
+[[redirects]]
+  from = "/api/packs"
+  to = "/.netlify/functions/packs"
+  status = 200
+
+# Technical telemetry: no story text, allow-listed keys only.
+[[redirects]]
+  from = "/api/telemetry"
+  to = "/.netlify/functions/telemetry"
+  status = 200
+
+# Single-page app: every path serves the app.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
